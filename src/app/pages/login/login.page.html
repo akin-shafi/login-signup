@@ -1,0 +1,43 @@
+<!-- <ion-header>
+  <ion-toolbar color="darkblue">
+    <ion-title >login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content padding='true'>
+  <section class="container d-flex h-100">
+    <div class="row justify-content-center align-self-center">
+        <div class="text-center col-12">
+          <img src="assets/images/logo.png" class="smallLogo"/>
+          <h1 class="font-weight-bold"><u>Login In</u></h1>
+        </div>
+      <div class="col-12">
+        <form >
+          <ion-list class="my-3">
+            
+
+            <ion-item>
+              <ion-label position="stacked"><ion-icon name="person-outline"></ion-icon> Username</ion-label>
+              <ion-input autocomplete="off" type="text" name="username" [(ngModel)]="postData.username"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked"><ion-icon name="lock-closed-outline"></ion-icon> Password</ion-label>
+              <ion-input autocomplete="off" type="password" name="password" [(ngModel)]="postData.password"></ion-input>
+            </ion-item>
+        
+            <ion-item lines='none' class="my-3">
+              <div class="clearfix w-100">
+                <a routerLink='/signup' class="float-left">Create Account</a>
+                <a routerLink='/forget' class="float-right">forget Password ?</a>
+              </div>
+            </ion-item>
+          </ion-list>
+          <ion-button expand="block" share="round" color="orange"  (click)="loginAction()">Login</ion-button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+</ion-content>
+

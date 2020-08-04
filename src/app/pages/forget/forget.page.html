@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="">
+    <!-- <ion-title >login</ion-title> -->
+    <a routerLink='/login' class="p-2 text-dark font-weight-bold">Back</a>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding='true'>
+  <section class="container d-flex h-100">
+    <div class="row justify-content-center align-self-center">
+        <div class="text-center col-12">
+          <img src="assets/images/logo.png" class="smallLogo"/>
+          <h1 class="font-weight-bold"><u>Forget Password</u></h1>
+        </div>
+      <div class="col-12">
+        <form >
+          <p>Enter your registered email below to reset password</p>
+          <ion-list class="my-3">
+            <ion-item>
+              <ion-label position="stacked">Email</ion-label>
+              <ion-input autocomplete="off" type="text" name="email" ></ion-input>
+            </ion-item>
+   
+          </ion-list>
+          <ion-button expand="block" share="round" color="orange" >Send Link</ion-button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+</ion-content>
+
+
+

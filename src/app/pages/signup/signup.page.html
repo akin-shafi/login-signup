@@ -1,0 +1,46 @@
+<!-- <ion-header>
+  <ion-toolbar color="darkblue">
+    <ion-title >login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content padding='true'>
+  <section class="container d-flex h-100">
+    <div class="row justify-content-center align-self-center">
+        <div class="text-center col-12">
+          <img src="assets/images/logo.png" class="smallLogo"/>
+          <h1 class="font-weight-bold"><u>Create Account</u></h1>
+        </div>
+      <div class="col-12">
+        <form>
+          <ion-list class="my-3">
+              <ion-item>
+                  <ion-label position="stacked">Name</ion-label>
+                  <ion-input autocomplete="off" name="name" type="text" ></ion-input>
+                </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Email</ion-label>
+              <ion-input autocomplete="off" name="email" type="email" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Username</ion-label>
+              <ion-input autocomplete="off" name="username" type="text" ></ion-input>
+            </ion-item>
+      
+            <ion-item>
+              <ion-label position="stacked">Password</ion-label>
+              <ion-input autocomplete="off" name="password" ></ion-input>
+            </ion-item>
+      
+            <ion-item lines='none'>
+              Already have an account? <a routerLink='/login' class="text-primary"><u> Sign in.</u></a>
+            </ion-item>
+          </ion-list>
+          <ion-button expand="block" share="round" color="orange" >Registration</ion-button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+</ion-content>
+
