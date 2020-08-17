@@ -31,14 +31,20 @@ export class AuthService {
   signup(postData: any): Observable<any> {
     return this.httpService.post('signup', postData);
   }
-
   logout() {
-    // this.storageService.clear();
-    // this.userData$.next('');
-    // this.router.navigate(['']);
-
     this.storageService.removeItem(AuthConstants.AUTH).then(res => {
-      this.router.navigate(['']);
-    })
+      this.userData$.next('');
+      this.router.navigate(['/login']);
+    });
   }
+
+  // logout() {
+  //   this.storageService.clear();
+  //   this.userData$.next('');
+  //   this.router.navigate(['/login']);
+
+  //   // this.storageService.removeItem(AuthConstants.AUTH).then(res => {
+  //   //   this.router.navigate(['/login']);
+  //   // })
+  // }
 }

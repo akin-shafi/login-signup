@@ -1,0 +1,94 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>{{ service_type }}</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="dismissModal()">Close</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+    <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+
+        <section>
+            <!-- {{id }} -->
+            <div #myDiv class="d-none">{{id }}</div>
+            <ion-item>
+                <ion-label position="floating">Origin Address</ion-label>
+                <ion-input #o_addressInput type="text" formControlName="o_addressInput"></ion-input>
+            </ion-item>
+            <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.o_addressInput">
+                    <div class="error-message" *ngIf="validations_form.get('o_addressInput').hasError(validation.type) && (validations_form.get('o_addressInput').dirty || validations_form.get('o_addressInput').touched)">
+                        <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+                    </div>
+                </ng-container>
+            </div>
+        </section>
+        <section #oStateWrapper>
+            <ion-item>
+                <ion-label position="floating">Origin State</ion-label>
+                <ion-input [(ngModel)]="postData.o_state" type="text" formControlName="o_state"></ion-input>
+            </ion-item>
+            <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.o_state">
+                    <div class="error-message" *ngIf="validations_form.get('o_state').hasError(validation.type) && (validations_form.get('o_state').dirty || validations_form.get('o_state').touched)">
+                        <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+                    </div>
+                </ng-container>
+            </div>
+        </section>
+        <section>
+            <ion-item>
+                <ion-label position="floating">Destination Address</ion-label>
+                <ion-input type="text" formControlName="d_addressInput"></ion-input>
+            </ion-item>
+            <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.d_addressInput">
+                    <div class="error-message" *ngIf="validations_form.get('d_addressInput').hasError(validation.type) && (validations_form.get('d_addressInput').dirty || validations_form.get('d_addressInput').touched)">
+                        <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+                    </div>
+                </ng-container>
+            </div>
+        </section>
+        <section #dStateWrapper>
+            <ion-item>
+                <ion-label position="floating">Destination State</ion-label>
+                <ion-input [(ngModel)]="postData.d_state" type="text" formControlName="d_state"></ion-input>
+            </ion-item>
+            <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.d_state">
+                    <div class="error-message" *ngIf="validations_form.get('d_state').hasError(validation.type) && (validations_form.get('d_state').dirty || validations_form.get('d_state').touched)">
+                        <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+                    </div>
+                </ng-container>
+            </div>
+        </section>
+        <section #dSCountry>
+            <ion-item>
+                <ion-label position="floating">Destination Country</ion-label>
+                <ion-input type="text" formControlName="d_country"></ion-input>
+            </ion-item>
+            <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.d_country">
+                    <div class="error-message" *ngIf="validations_form.get('d_country').hasError(validation.type) && (validations_form.get('d_country').dirty || validations_form.get('d_country').touched)">
+                        <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+                    </div>
+                </ng-container>
+            </div>
+        </section>
+        <section #ItemWeight>
+            <ion-item>
+                <ion-label position="floating">Weight of Item</ion-label>
+                <ion-input type="number" formControlName="weight"></ion-input>
+            </ion-item>
+            <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.weight">
+                    <div class="error-message" *ngIf="validations_form.get('weight').hasError(validation.type) && (validations_form.get('weight').dirty || validations_form.get('weight').touched)">
+                        <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+                    </div>
+                </ng-container>
+            </div>
+        </section>
+        <ion-button [disabled]="!validations_form.valid" color="primary" class="submit-btn" expand="block" type="submit">Get Estimate</ion-button>
+    </form>
+</ion-content>

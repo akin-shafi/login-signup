@@ -1,0 +1,86 @@
+<app-header></app-header>
+
+<ion-content>
+    <!-- <span id="title">Dash</span> -->
+    <!-- Page Wrapper -->
+    <div class="content container">
+        <!-- <div>Welcome {{ authUser?.first_name }} {{ authUser?.last_name }}</div> -->
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-lg-4 col-xl-4 col-12">
+                <div class="card dash-widget mb-3">
+                    <div class="card-body">
+                        <span class="dash-widget-icon"><ion-icon name="dollar"></ion-icon></span>
+                        <div class="dash-widget-info">
+                            <h3>N 0.00</h3>
+                            <span>Wallet Amount</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-lg-4 col-xl-4 col-6">
+                <div class="card dash-widget mb-3">
+                    <div class="card-body">
+                        <span class="dash-widget-icon"><ion-icon name="cog"></ion-icon></span>
+                        <div class="dash-widget-info">
+                            <h3>2</h3>
+                            <span>Total Request</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-lg-4 col-xl-4 col-6">
+                <div class="card dash-widget mb-3">
+                    <div class="card-body">
+                        <span class="dash-widget-icon"><ion-icon name="cog"></ion-icon></span>
+                        <div class="dash-widget-info">
+                            <h3>2</h3>
+                            <span>Total Delivered</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- <div class="row">
+            <div class="col-md-12">
+                <h6 class="border-bottom font-weight-bold pb-2">Recent Request</h6>
+                <div class="card p-2" button *ngFor="let shipment of shipments" (click)="openModal()">
+                    <div class="d-flex justify-content-between">
+                        <small>Recipient:</small>
+                        <small>{{shipment.created_on}}</small>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h5> {{shipment.Recipient}}</h5>
+                            <p>Waybill No: {{shipment.waybillNo}}</p>
+                        </div>
+                        <div class=" pt-2">
+                            <div class="badge badge-square badge-warning mr-1 mb-1">
+                                <i class="feather-sun"></i>
+                                <span>{{shipment.shpstatus}}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <h6 class="border-bottom font-weight-bold pb-2">Recent Shipment</h6>
+        <ion-list>
+            <ion-item button *ngFor="let shipment of shipments" (click)="openModal()">
+                <ion-label>
+                    <h2>Waybill No: {{ shipment.waybillNo }}</h2>
+                    <p class="d-flex justify-content-between text-dark">
+                        <span>TO: {{shipment.Recipient}} </span>
+                        <span class="badge badge-square badge-warning mr-1 ">
+                            <i class="feather-sun"></i>
+                            <span>{{shipment.shpstatus}}</span>
+                        </span>
+                    </p>
+                </ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>
